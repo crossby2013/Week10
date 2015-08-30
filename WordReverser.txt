@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WordReverser
+{
+    class WordReverser
+    {
+        static void Main(string[] args)
+        {
+             string text = "EM edit";
+            //declared variable text to the data type string. Assigned text to "EM edit"
+        string reversed = ReverseText(text);
+            //declared variable reversed to the data type string. Assigned reversed to the Method ReverseText. Text is the argument in the ReverseText method.
+        Console.WriteLine(reversed);
+            // Output tide ME
+        Console.ReadLine();
+ 
+        }
+ 
+    static string ReverseText(string text)
+    {
+        StringBuilder sb = new StringBuilder();
+        //Stringbuilder is a class. Creating a new StringBuilder object called sb.
+        for (int i = text.Length - 1; i >= 0; i--)
+         //i is assigned to the variable text.length -1. i is greater than or equal to 0. i takes away 1 over and over
+        {
+            sb.Append(text[i]);
+            //Append is a method. Taking the variable text and adding it the string
+        }
+        return sb.ToString();
+        //returns sb in a string
+        }
+        
+    }
+}
