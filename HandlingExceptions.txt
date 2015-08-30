@@ -1,0 +1,52 @@
+Try-Catch-Finally Block in C#
+
+Try-Catch-Finally are exception handler components use during catching and handling exceptions. The try block encloses the part of the code that might throw an exception. Catch block handles the type of exception indicated by its arguments related to the try block. Finally block is to ensure that a set of code statement will always execute, exception or not. 
+
+Example:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodChallenge
+{
+    class MethodChallenge
+    {
+        static void Main(string[] args)
+        {
+           Console.WriteLine(Challenge());
+           Console.ReadLine();
+        }
+My class is called MethodChallenge and the class is calling the method called Challenge.
+        
+     public static string Challenge()
+        {
+            try
+            {
+                throw new System.Exception(" 301, an error");
+                Console.WriteLine("Outer try is running");
+                Console.WriteLine("Nested try is running");
+                
+            }
+           catch (System.Exception e)
+            {
+               return "Nested catch caught" + e.Message + " OOPS!!! ";
+                
+            }
+           finally
+            {
+                Console.WriteLine ("Nested finally is running");
+            }
+           
+        }
+    }
+}
+
+
+In the method called Challenge it is catching and handling an exception. The try block is throwing an error. Once the error is thrown nothing else in the try block can run. The catch block is catching the exception called e. The finally block will print out the statement before the return in catch because the return forces the program to stop. Remember that the finally block will always execute before the closing of the program. 
+
+The output would be:
+Nested finally is running
+Nested catch caught 301, an error OOPS!!!
